@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+{% if object.code %}
+
+<div class="card mb-3" style="max-width: 840px;">
+        <img src="{{ object.code.url }}" class="card-img">
+</div>
+
+{% endif %}
+
+{% endblock content %}
