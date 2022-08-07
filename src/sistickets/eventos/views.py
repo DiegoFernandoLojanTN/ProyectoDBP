@@ -12,10 +12,6 @@ class EventosListView(ListView):
     model = Evento
     template_name = 'list.html'
 
-class verQr(ListView):
-	model = Evento
-	template_name = 'codigoQr.html'
-
 class EventosDetailView(DetailView):
     model = Evento
     template_name = 'detail.html'
@@ -45,3 +41,11 @@ def paymentComplete(request):
 		product=product
 	)
 	return JsonResponse('Pago Completado!', safe=False)
+
+################################
+
+class verQr(ListView):
+	model = Evento
+	template_name = 'codigoQr.html'
+
+	

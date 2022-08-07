@@ -20,21 +20,22 @@ class Evento(models.Model):
     image_url = models.CharField(max_length = 2083, default=False)
     ver_instragram = models.CharField(max_length=2083, blank=True)  
     evento_valido = models.BooleanField(default=False)
-    code = models.ImageField(blank=True, upload_to='code', null= False)
+    #code = models.ImageField(blank=True, upload_to='code', null= False)
+    codigoqr = models.CharField(max_length = 2083, default=False)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.nombre
     
-    def save(self, *args, **kwargs):
-        qr_image = qrcode.make(self.nombre)
-        qr_offset = Image.new('RGB', (310, 310), 'white')
-        qr_offset.paste(qr_image)
-        files_name = f'{self.nombre}-{self.id}qr.png'
-        stream = BytesIO()
-        qr_offset.save(stream, 'PNG')
-        self.code.save(files_name, File(stream), save=False)
-        qr_offset.close()
-        super().save('*args, **kwargs')
+    #def save(self, *args, **kwargs):
+    #    qr_image = qrcode.make(self.nombre)
+    #    qr_offset = Image.new('RGB', (310, 310), 'white')
+    #    qr_offset.paste(qr_image)
+    #    files_name = f'{self.nombre}-{self.id}qr.png'
+    #    stream = BytesIO()
+    #    qr_offset.save(stream, 'PNG')
+    #    self.code.save(files_name, File(stream), save=False)
+    #    qr_offset.close()
+    #    super().save('*args, **kwargs')
     
 
 

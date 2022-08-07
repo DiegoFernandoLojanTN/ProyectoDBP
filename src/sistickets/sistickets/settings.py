@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
      # my apps,
-    'src.sistickets.accounts.apps.AccountsConfig',
     'src.sistickets.eventos.apps.EventosConfig',
+    'src.sistickets.accounts.apps.AccountsConfig',
+    
 ]
 
 MIDDLEWARE = [
